@@ -1,22 +1,23 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "Xiao Tang CS5610",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "NodeJS web application for CS5610",
   "keywords": [
-    "OpenShift",
+    "AngularJS",
+    "Bootstrap",
+    "MongoDB",
     "Node.js",
-    "application",
-    "openshift"
+    "OpenShift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url": "http://www.openshift.com/"
+    "name": "Xiao Tang",
+    "email": "xiaotang.hello@gmail.com",
+    "url": "http://cs5610-xiaotang0528.rhcloud.com"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://cs5610-xiaotang0528.rhcloud.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "url": "https://github.com/XiaoTang0720/cs5610fall2015"
   },
 
   "engines": {
