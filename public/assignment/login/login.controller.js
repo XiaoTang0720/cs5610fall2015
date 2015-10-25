@@ -1,21 +1,18 @@
-(function()
-{
+(function() {
     angular
         .module("FormBuilderApp")
-        .controller("LoginController", LoginController) 
+        .controller("LoginController", LoginController)
 
-	function LoginController($scope, UserService, $rootScope, $location)
-    {
-        UserService.findAllUsers(function(users){
-            console.log(users);
-        })
+	function LoginController($scope, UserService, $rootScope, $location) {
         $scope.$location = $location;
-        $scope.login = function () {
-            UserService.findUserByUsernameAndPassWord($scope.user.username, $scope.user.password, function(user){
+        $scope.login = function(loginuser) {
+            UserService.findUserByUsernameAndPassWord($scope.loginuser.username, $scope.loginuser.password, function(user){
                 if (user != null) {
+                    alert("Welcome to login in!");
                     $rootScope.user = user;
                     $location.url("/profile");
-                    
+                } else {
+                    alert("Username or password is wrong.");
                 }
             })
         }

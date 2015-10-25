@@ -1,18 +1,14 @@
-(function()
-{
+(function() {
     angular
         .module("FormBuilderApp")
-        .controller("ProfileController", ProfileController) 
+        .controller("ProfileController", ProfileController)
 
-	function ProfileController($scope, UserService, $rootScope, $location)
-    {
+	function ProfileController($scope, UserService, $rootScope, $location) {
         $scope.$location = $location;
         var curUser = $rootScope.user;
-        UserService.findAllUsers(function(users) {
-            console.log(users);
-        })
-        $scope.update = function () {
-            UserService.updateUser(curUser.userid, $scope.user, function(user){
+        $scope.update = function(updateuser) {
+            console.log("update user: " + updateuser);
+            UserService.updateUser(curUser.userid, $scope.updateuser, function(user){
                 $rootScope.user = user;
             })
         }
