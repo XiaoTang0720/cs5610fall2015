@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FormBuilderApp">
+<head>
+    <title>Xiao Tang</title>
+</head>
+<body>
+<div class="container-fluid" ng-controller="FormController">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="page-header">Forms</h2>
+                <table class="table table-striped table-bordered">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="active"><a href="#">Forms</a></li>
+                        <li role="presentation"><a href="form-fields.html">Fields</a></li>
+                    </ul>
+                    <thead>
+                        <tr>
+                            <th><a href="#"><scan class="glyphicon glyphicon-triangle-bottom"></scan></a>Form Name</th>
+                            <th><a href="#"><scan class="glyphicon glyphicon-triangle-bottom"></scan></a>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input ng-model="newForm.formName" class="form-control" type="text" name="FormName" placeholder="name"/></td>
+                            <td>
+                                <button ng-click="addForm(newForm)" class="btn btn-primary"><scan class="glyphicon glyphicon-plus">Add</button>
+                                <button ng-click="updateForm(newForm)" class="btn btn-success"><scan class="glyphicon glyphicon-ok">Update</button>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="form in forms">
+                            <td>{{form.formName}}</td>
+                            <td>
+                                <button ng-click="deleteForm($index)" class="btn btn-danger">Remove</button>
+                                <button ng-click="selectForm($index)" class="btn btn-info">Select</button>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
