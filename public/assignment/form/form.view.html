@@ -23,14 +23,14 @@
                             <tr>
                                 <td><input ng-model="newForm.formName" class="form-control" type="text" name="FormName" placeholder="name"/></td>
                                 <td>
-                                    <button ng-click="addForm(newForm)" class="btn btn-primary"><scan class="glyphicon glyphicon-plus">Add</button>
-                                    <button ng-click="updateForm(newForm)" class="btn btn-success"><scan class="glyphicon glyphicon-ok">Update</button>
+                                    <button ng-click="addForm(newForm)" class="btn btn-primary"><scan class="glyphicon glyphicon-plus">Add</scan></button>
+                                    <button ng-click="updateForm(newForm)" class="btn btn-success"><scan class="glyphicon glyphicon-ok">Update</scan></button>
                                 </td>
                             </tr>
                             <tr ng-repeat="form in forms">
                                 <td>{{form.formName}}</td>
                                 <td>
-                                    <button ng-click="deleteForm($index)" class="btn btn-danger">Remove</button>
+                                   <button ng-click="deleteForm($index)" class="btn btn-danger"><scan class="glyphicon glyphicon-remove">Remove</scan></button>
                                     <button ng-click="selectForm($index)" class="btn btn-info">Select</button>
                                 </td>
                             </tr>
