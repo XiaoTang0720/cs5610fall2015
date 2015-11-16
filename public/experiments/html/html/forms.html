@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="assignment2">
+    <meta name="description" content="assignment3">
     <meta name="author" content="XiaoTang">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="../css/favicon.ico">
 
     <title>Xiao Tang</title>
 
@@ -15,7 +15,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -56,80 +56,50 @@
             <ul class="nav nav-sidebar">
                 <li><a href="home.html">Home</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li class="active"><a href="#">Admin<span class="sr-only">(current)</span></a></li>
-                <li><a href="forms.html">Forms</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li class="active"><a href="#">Forms<span class="sr-only">(current)</span></a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Admin</h1>
-            <h2>Users</h2>
+            <h2 class="page-header">Forms</h2>
                 <table class="table table-striped table-bordered">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" class="active"><a href="#">Forms</a></li>
+                        <li role="presentation"><a href="form-fields.html">Fields</a></li>
+                    </ul>
                     <thead>
                         <tr>
-                            <th><a href="#">
-                                <scan class="glyphicon glyphicon-triangle-bottom"></scan>
-                                </a>Username
-                            </th>
-                            <th><a href="#">
-                                <scan class="glyphicon glyphicon-triangle-bottom"></scan>
-                                </a>Password</th>
-                            <th><a href="#">
-                                <scan class="glyphicon glyphicon-triangle-bottom"></scan>
-                                </a>Role</th>
-                            <th><a href="#">
-                                <scan class="glyphicon glyphicon-triangle-bottom"></scan>
-                                </a>Actions</th>
+                            <th><a href="#"><scan class="glyphicon glyphicon-triangle-bottom"></scan></a>Form Name</th>
+                            <th><a href="#"><scan class="glyphicon glyphicon-triangle-bottom"></scan></a>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <input class="form-control" type="text" name="Username" placeholder="UserName"/>
-                            </td>
-                            <td>
-                                <input class="form-control" type="password" name="password" placeholder="Password"/>
-                            </td>
-                            <td>
-                                <input class="form-control" type="text" name="role" placeholder="role1,role2"/>
-                            </td>
+                            <td><input class="form-control" type="text" name="FormName" placeholder="name"/></td>
                             <td>
                                 <a href="#"><scan class="glyphicon glyphicon-plus"></scan></a>
                                 <a href="#"><scan class="glyphicon glyphicon-ok"></scan></a>
                             </td>
                         </tr>
                         <tr>
-                            <td>Alice</td>
-                            <td></td>
-                            <td>Student</td>
+                            <td><a href="form-fields.html">Registration Form</a></td>
                             <td>
                                 <a href="#"><scan class="glyphicon glyphicon-pencil"></scan></a>
                                 <a href="#"><scan class="glyphicon glyphicon-remove"></scan></a>
                             </td>
                         </tr>
                         <tr>
-                            <td> Bob</td>
-                            <td></td>
-                            <td>Faculty | Admin</td>
+                            <td><a href="form-fields.html">Contact List</a></td>
                             <td>
-                                <a href="#">
-                                    <scan class="glyphicon glyphicon-pencil"></scan>
-                                </a>
-                                <a href="#">
-                                    <scan class="glyphicon glyphicon-remove"></scan>
-                                </a>
+                                <a href="#"><scan class="glyphicon glyphicon-pencil"></scan></a>
+                                <a href="#"><scan class="glyphicon glyphicon-remove"></scan></a>
                             </td>
                         </tr>
                         <tr>
-                            <td>Charlie</td>
-                            <td></td>
-                            <td></td>
+                            <td><a href="form-fields.html">To Do List</a></td>
                             <td>
-                                <a href="#">
-                                    <scan class="glyphicon glyphicon-pencil"></scan>
-                                </a>
-                                <a href="#">
-                                    <scan class="glyphicon glyphicon-remove"></scan>
-                                </a>
+                                <a href="#"><scan class="glyphicon glyphicon-pencil"></scan></a>
+                                <a href="#"><scan class="glyphicon glyphicon-remove"></scan></a>
                             </td>
                         </tr>
                     </tbody>
@@ -141,8 +111,8 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!--<script src="../../dist/js/bootstrap.min.js"></script>-->
 <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
 <!--<script src="../../assets/js/vendor/holder.min.js"></script>-->

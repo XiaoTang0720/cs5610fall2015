@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Xiao Tang</title>
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h2 class="page-header">Forms: Registration Form</h2>
+                <table class="table table-striped table-bordered">
+                    <ul class="nav nav-pills">
+                        <li role="presentation"><a href="#/form">Forms</a></li>
+                        <li role="presentation" class="active"><a href="#">Fields</a></li>
+                    </ul>
+                    <tbody>
+                        <tr ng-repeat="field in fields">
+                            <td ng-switch on="field.type">
+                                <label>{{field.label}}</label>
+                                <input ng-switch-when="text" placeholder="{{field.placeholder}}" type="text" class="form-control" />
+                                <input ng-switch-when="date" placeholder="{{field.placeholder}}" type="date" class="form-control" />
+                                <input ng-switch-when="email" placeholder="{{field.placeholder}}" type="email" class="form-control" />
+                                <input ng-switch-when="textarea" placeholder="{{field.placeholder}}" type="textarea" class="form-control" />
+                                <div ng-switch-when="radio" ng-repeat="option in field.options" class="radio">
+                                    <label>
+                                        <input type="radio">{{option.value}}</input>
+                                    </label>
+                                </div>
+                                <div ng-switch-when="checkbox" ng-repeat="option in field.options" class="checkbox">
+                                    <label>
+                                        <input type="checkbox">{{option.value}}</input>
+                                    </label>
+                                </div>
+                                <select ng-switch-when="option" class="form-control">
+                                    <option ng-repeat="option in field.options">{{option.value}}</option>
+                                </select>
+                            </td>
+                            <td>
+                                <a href=""><scan class="glyphicon glyphicon-pencil"></scan></a>
+                                <a href=""><scan class="glyphicon glyphicon-plus"></scan></a>
+                                <a href="" ng-click="deleteField($index)"><scan class="glyphicon glyphicon-remove"></scan></a>
+                                <a href=""><scan class="glyphicon glyphicon-align-justify"></scan></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addNewField">Add New Field:</label>
+                                <select id="addNewField" class="form-control">
+                                    <option value="siglelinetext">Sigle Line Text</option>
+                                    <option value="date">Date</option>
+                                    <option value="dropdown">Dropdown</option>
+                                    <option value="checkbox">Checkbox</option>
+                                    <option value="radiobutton">Radio Button</option>
+                                    <option value="paragraphtextfield">Paragraph Text Field</option>
+                                </select>
+                            </td>
+                            <td>
+                                <scan data-toggle="modal" data-target="#addNewField" class="glyphicon glyphicon-plus"></scan>
+                            </td>
+
+
+                            <div id="addNewField" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Field Properties</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group">
+                                                    <label for="label" class="col-sm-2 control-label">Label</label>
+                                                    <div class="col-sm-10">
+                                                        <input ng-model="newField.label" type="text" class="form-control" id="label" placeholder="New Text Field" name="Label" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="placeholder" class="col-sm-2 control-label">Placeholder</label>
+                                                    <div class="col-sm-10">
+                                                        <input ng-model="newField.placeholder" type="text" class="form-control" id="placeholder" placeholder="Placeholder" name="Placeholder" />
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="tooltip" class="col-sm-2 control-label">Tooltip</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" id="tooltip" placeholder="Tooltip">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="type" class="col-sm-2 control-label">Type</label>
+                                                    <div class="col-sm-10">
+                                                        <select ng-init="newField.type=newField.type || 'text'" ng-model="newField.type" name="Type" id="type" class="form-control">
+                                                            <option value="text">Single Line Text</option>
+                                                            <option value="date">Date</option>
+                                                            <option value="option">Dropdown</option>
+                                                            <option value="checkbox">Checkbox</option>
+                                                            <option value="radio">Radio Button</option>
+                                                            <option value="textarea">Paragraph Text Field</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="option" class="col-sm-2 label-control">Options:</label>
+                                                    <textarea ng-init="newField.options=newField.options || 'Option1 | Option2 | Option3'" ng-model="newField.options" name="Options" class="form-control" rows="5" id="option">
+                                                    </textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button ng-click="addField(newField)" type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

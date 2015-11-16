@@ -7,8 +7,7 @@
         $scope.$location = $location;
         var curUser = $rootScope.user;
         $scope.update = function(updateuser) {
-            console.log("update user: " + updateuser);
-            UserService.updateUser(curUser.userid, $scope.updateuser, function(user){
+            UserService.updateUser(curUser.userid, $scope.updateuser).then(function(user){
                 $rootScope.user = user;
             })
         }
