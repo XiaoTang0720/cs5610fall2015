@@ -6,7 +6,7 @@ var multer = require('multer');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/cs5610');
 
-var connectionString = 'mongodb://127.0.0.1:27017/cs5610';
+var connectionString = 'mongodb://127.0.0.1:3000/cs5610';
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
     connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
