@@ -3,8 +3,7 @@
         .module("MovieJourney")
         .controller("MovieDetailController", MovieDetailController);
 
-	function MovieDetailController($scope, $rootScope,
-        OrderService, WatchlistService, MovieService, UserService, $location, $http) {
+	function MovieDetailController($scope, $rootScope, OrderService, WatchlistService, MovieService, UserService, $location, $http) {
 		$scope.$location = $location;
         $scope.noComments = true;
         $scope.pageIsLoading = true;
