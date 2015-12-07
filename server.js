@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
+app.use(express.static(__dirname + '/public'));
+
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var multer = require('multer');
 
-var mongoose = require('mongoose');
-var connectionString = 'localhost:3000/cs5610';
+var connectionString = 'mongodb://localhost/cs5610';
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
     connectionString = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
@@ -14,16 +19,13 @@ if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
         process.env.OPENSHIFT_APP_NAME;
 }
 
-var db = mongoose.connect(connectionString);
+mongoose.connect(connectionString);
+var db = mongoose.connection;
 
-app.use(express.static(__dirname + '/public'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(multer());
-
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
-var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
 
 require("./public/assignment/server/app.js")(app, mongoose, db);
 require("./public/project/server/app.js")(app, mongoose, db);
