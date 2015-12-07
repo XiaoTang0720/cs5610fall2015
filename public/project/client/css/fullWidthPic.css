@@ -9,7 +9,19 @@ body {
 }
 
 .image-bg-fluid-height,
-.image-bg-fixed-height {
+.image-bg-fixed-height,
+.image-bg-fluid-height2,
+.image-bg-fixed-height2,
+.image-bg-fluid-height3,
+.image-bg-fixed-height3,
+.image-bg-fluid-height4,
+.image-bg-fixed-height4,
+.image-bg-fluid-height5,
+.image-bg-fixed-height5,
+.image-bg-fluid-height6,
+.image-bg-fixed-height6,
+.image-bg-fluid-height6,
+.image-bg-fixed-height6  {
     text-align: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -28,6 +40,87 @@ body {
 
 .image-bg-fixed-height {
 	background: url('../img/fullWidPic.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.image-bg-fluid-height2 {
+	background: url('../img/headerPicture2.jpg') no-repeat fixed;
+    padding: 100px 0;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.image-bg-fixed-height2 {
+	background: url('../img/headerPicture2.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.image-bg-fluid-height3 {
+	background: url('../img/headerPicture3.jpg') no-repeat fixed;
+    padding: 100px 0;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.image-bg-fixed-height3 {
+	background: url('../img/headerPicture3.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.image-bg-fluid-height4 {
+	background: url('../img/headerPicture4.jpg') no-repeat fixed;
+    padding: 100px 0;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+.image-bg-fixed-height4 {
+	background: url('../img/headerPicture4.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.image-bg-fluid-height5 {
+	background: url('../img/headerPicture5.jpg') no-repeat fixed;
+    padding: 100px 0;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+.image-bg-fixed-height5 {
+	background: url('../img/headerPicture5.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.image-bg-fluid-height6 {
+	background: url('../img/headerPicture6.jpg') no-repeat fixed;
+    padding: 100px 0;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+.image-bg-fixed-height6 {
+	background: url('../img/headerPicture6.jpg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.image-bg-fluid-height7 {
+	background: url('../img/headerPicture7.jpg') no-repeat fixed;
+    padding: 100px 0;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+.image-bg-fixed-height7 {
+	background: url('../img/headerPicture7.jpg') no-repeat center center scroll;
     height: 450px;
 }
 
