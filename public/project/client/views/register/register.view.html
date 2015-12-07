@@ -1,0 +1,54 @@
+
+    <div>
+    <header class="image-bg-fluid-height">
+        <h1 class="img-responsive img-center">Welcome to Moive Journey!</h1>
+        <!--<img class="img-responsive img-center" src="" alt="">-->
+    </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Sign Up</h1>
+                </div>
+            </div>
+            <div class="row">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-offset-2 col-sm-2 control-label">Username</label>
+                        <div class="col-sm-6">
+                            <input ng-model="newuser.username" type="text" class="form-control" id="username" placeholder="Username" required>
+                            <div ng-show="userNameExisted" class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+                                Sorry, username already existed, please try another one!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-offset-2  col-sm-2 control-label">Password</label>
+                        <div class="col-sm-6">
+                            <input ng-model="newuser.password" type="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="verifypassword" class="col-sm-offset-2 col-sm-2 control-label">Verify Password</label>
+                        <div class="col-sm-6">
+                            <input ng-model="newuser.verifypassword" type="password" class="form-control" id="verifypassword" placeholder="Verify Password" required>
+                            <div ng-show="newuser.verifypassword && newuser.password != newuser.verifypassword" class="alert alert-danger" role="alert">
+                                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                                <span class="sr-only">Error:</span>Password does not match!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-offset-2 col-sm-2 control-label">Email</label>
+                        <div class="col-sm-6">
+                            <input ng-model="newuser.email" type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-6">
+                            <button ng-click="register(newuser)" class="btn btn-success active" role="button">Sign up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>

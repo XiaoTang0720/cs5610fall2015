@@ -1,6 +1,4 @@
-var model = require("../models/user.model.js")();
-
-module.exports = function(app) {
+module.exports = function(app, model) {
 
     app.post("/api/assignment/user", create);
     app.get("/api/assignment/user", find);
@@ -9,7 +7,11 @@ module.exports = function(app) {
     app.delete("/api/assignment/user/:id", deleteUser);
 
     function create(req, res) {
-        res.json(model.createUser(req.body));
+        model
+            .createUser(req.body)
+            .then(function(user) {
+                res.json(user);
+            });
     }
 
     function find(req, res) {
@@ -21,27 +23,50 @@ module.exports = function(app) {
                 "username": username,
                 "password": password
             }
-            res.json(model.findUserByCredentials(credential));
+            model
+                .findUserByCredentials(credential)
+                .then(function(user) {
+                    res.json(user);
+                })
         } else if (username != null) {
-            res.json(model.findUserByUsername(username));
+            model
+                .findUserByUsername(username)
+                .then(function(user) {
+                    res.json(user);
+                })
         } else {
-            res.json(model.findAllUsers());
+            model
+                .findAllUsers()
+                .then(function(users) {
+                    res.json(users);
+                })
         }
     }
 
     function findById(req, res) {
         var uid = req.params.id;
-        res.json(model.findUserById(uid));
+        model
+            .findUserById(uid)
+            .then(function(user) {
+                res.json(user);
+            });
     }
 
     function update(req, res) {
         var id = req.params.id;
         var user = req.body;
-        res.json(model.updateUser(id, user));
+        model
+            .updateUser(id, user)
+            .then(function(user) {
+                res.json(user);
+            });
     }
 
     function deleteUser(req, res) {
-        var uid = req.params.id;
-        res.json(model.deleteUser(uid));
+        model
+            .deleteUser(req.params.id)
+            .then(function(user) {
+                res.json(user);
+            });
     }
 };

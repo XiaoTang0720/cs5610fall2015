@@ -3,13 +3,22 @@
         .module("FormBuilderApp")
         .controller("RegisterController", RegisterController)
 
-	function RegisterController($scope, UserService, $rootScope, $location) {
+    function RegisterController($scope, UserService, $rootScope, $location) {
         $scope.register = function(newuser) {
-            UserService.createUser($scope.newuser).then(function(user) {
-                $rootScope.user = user;
-                console.log(user.id + user.username + user.password);
-            })
-            $location.url("/profile");
+            $scope.userNameExisted = false;
+            if (newuser && newuser.username && newuser.password) {
+                UserService.findUserByUsername(newuser.username).then(function(user) {
+                    if (!user) {
+                        // username does not exist.
+                        UserService.createUser(newuser).then(function(createUser) {
+                            $rootScope.user = createUser;
+                            $location.url("/login");
+                        });
+                    } else {
+                        $scope.userNameExisted = true;
+                    }
+                });
+            }
         }
     }
 })();

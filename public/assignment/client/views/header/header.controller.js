@@ -3,8 +3,12 @@
         .module("FormBuilderApp")
         .controller("HeaderController", HeaderController);
 
-	function HeaderController($scope, $location) {
+	function HeaderController($scope, $rootScope, $location) {
 		$scope.$location = $location;
-		console.log($location.url());
+        $rootScope.userName = "Sign in";
+        var curUser = $rootScope.user;
+        if (curUser) {
+            $rootScope.userName = curUser.username;
+        }
 	}
 })();

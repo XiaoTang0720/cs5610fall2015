@@ -1,40 +1,29 @@
-var model = require("../models/form.model.js")();
-
-module.exports = function(app) {
-
+module.exports = function(app, model) {
     app.post("/api/assignment/form/:formId/field", create);
-    app.get("/api/assignment/form/:formId/field", findFieldsByForm);
-    app.get("/api/assignment/form/:formId/field/:fieldId", findField);
-    app.put("/api/assignment/form/:formId/field/:fieldId", updateField);
+    app.get("/api/assignment/form/:formId/field", findAll);
     app.delete("/api/assignment/form/:formId/field/:fieldId", deleteField);
 
     function create(req, res) {
-        var formId = req.params.formId;
-        var field = req.body;
-        res.json(model.createField(formId, field));
+        model
+            .createFieldForForm(req.params.formId, req.body)
+            .then(function(field) {
+                res.json(field);
+            });
     }
 
-    function findFieldsByForm(req, res) {
-        var formId = req.params.formId;
-        res.json(model.findAllFieldsForForm(formId));
-    }
-
-    function findField(req, res) {
-        var formId = req.params.formId;
-        var fieldId = req.params.fieldId;
-        res.json(model.findFieldById(formId, fieldId));
-    }
-
-    function updateField(req, res) {
-        var formId = req.params.formId;
-        var fieldId = req.params.fieldId;
-        var field = req.body;
-        res.json(model.updateField(formId, fieldId, field));
+    function findAll(req, res) {
+        model
+            .getFieldsForForm(req.params.formId)
+            .then(function(fields) {
+                res.json(fields);
+            });
     }
 
     function deleteField(req, res) {
-        var formId = req.params.formId;
-        var fieldId = req.params.fieldId;
-        res.json(model.deleteField(formId, fieldId));
+        model
+            .deleteFieldFromForm(req.params.formId, req.params.fieldId)
+            .then(function(field) {
+                res.json(field);
+            });
     }
-}
+};

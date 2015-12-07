@@ -1,0 +1,72 @@
+<div ng-controller="FriendController">
+<header class="image-bg-fluid-height">
+    <h1 class="img-responsive img-center"></h1>
+</header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 main">
+            <h2 class="page-header">I am following: </h2>
+            </div>
+        </div>
+        <div ng-show="followingIsEmpty" class="alert alert-danger col-md-10 col-md-offset-1 main">
+            <strong>Sorry!</strong>
+            You are not following any friends yet!
+        </div>
+        <div ng-hide="followingIsEmpty" class="row">
+            <div class="col-md-10 col-md-offset-1 main">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>UserName</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="following in followings">
+                            <td>{{following.username}}</td>
+                            <td>{{following.firstname}}</td>
+                            <td>{{following.lastname}}</td>
+                            <td>
+                                <button ng-click="deleteFollowingById($index)" class="btn btn-danger"><scan class="glyphicon glyphicon-remove">&nbsp;UnFollow</scan></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1 main">
+            <h2 class="page-header">I am followed by: </h2>
+            </div>
+        </div>
+        <div ng-show="followedIsEmpty" class="alert alert-danger col-md-10 col-md-offset-1 main">
+            <strong>Sorry!</strong>
+            You are not followed by any friends yet!
+        </div>
+        <div ng-hide="followedIsEmpty" class="row">
+            <div class="col-md-10 col-md-offset-1 main">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>UserName</th>
+                            <th>FirstName</th>
+                            <th>LastName</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="followed in followeds">
+                            <td>{{followed.username}}</td>
+                            <td>{{followed.firstname}}</td>
+                            <td>{{followed.lastname}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

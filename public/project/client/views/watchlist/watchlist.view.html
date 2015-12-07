@@ -1,0 +1,42 @@
+    <div>
+    <header class="image-bg-fluid-height">
+            <h1 class="img-responsive img-center"></h1>
+    </header>
+        <div class="container">
+            <div class="row">
+               <div class="col-md-10 col-md-offset-1 main">
+                <h2 class="page-header">My Watchlist</h2>
+               </div>
+            </div>
+            <div ng-show="watchlistIsEmpty" class="alert alert-danger col-md-10 col-md-offset-1 main">
+                <strong>Sorry!</strong>
+                You did not have any movies in your watchlist yet!
+            </div>
+
+            <div ng-hide="watchlistIsEmpty" class="row col-md-10 col-md-offset-1 main">
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Movie Id</th>
+                            <th>Movie Title</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="movie in watchlist">
+                            <td>
+                                <a ng-click="linkBackToMovieDetail(movie.idIMDB)">
+                                {{movie.idIMDB}}
+                                </a>
+                            </td>
+                            <td>{{movie.title}}</td>
+                            <td>
+                                <button ng-click="deleteWatchlistById($index)" class="btn btn-danger"><scan class="glyphicon glyphicon-remove">Remove</scan></button>
+                                <button ng-click="addWatchlistToOrder(movie)" class="btn btn-primary"><scan class="glyphicon glyphicon-plus">&nbsp;Add to order&nbsp;</scan></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

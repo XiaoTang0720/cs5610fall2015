@@ -1,0 +1,156 @@
+
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row well">
+            <div class="row">
+                <span ng-show="pageIsLoading" us-spinner="{radius:50, width:20, length: 40, top: '60%'}"></span>
+                <!-- poster -->
+                <div class="col-sm-3">
+                    <img class="img-responsive" src="{{response.urlPoster}}" alt="">
+                </div>
+
+                <!-- information -->
+                <div class="col-sm-9">
+                    <h2><scan class="glyphicon glyphicon-film"></scan>&nbsp;{{response.title}}&nbsp;<small>({{response.year}})</small></h2>
+                    <div class="col-sm-6"><h5><scan class="glyphicon glyphicon-heart"></scan><cite>&nbsp;Score:&nbsp;</cite>{{response.metascore}}</h5></div>
+                    <div class="col-sm-6"><h5><scan class="glyphicon glyphicon-thumbs-up"></scan><cite>&nbsp;Votes:&nbsp;</cite>{{response.votes}}</h5></div>
+                    <div class="col-sm-6"><h5><scan class="glyphicon glyphicon-star"></scan><cite>&nbsp;Rating:&nbsp;</cite>{{response.rating}}</h5></div>
+                    <div class="col-sm-6"><h5><scan class="glyphicon glyphicon-dashboard"></scan><cite>&nbsp;Runtime:&nbsp;</cite>{{response.runtime[0]}}</h5></div>
+                    <div class="col-sm-6">
+                        <h5>
+                            <scan class="glyphicon glyphicon-globe"></scan>
+                            <cite>&nbsp;Countries:&nbsp;</cite>
+                            <span ng-repeat="country in response.countries">
+                                <span>&nbsp;{{country}}&nbsp;</span>
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5>
+                            <scan class="glyphicon glyphicon-console"></scan>
+                            <cite>&nbsp;Languages:&nbsp;</cite>
+                            <span ng-repeat="language in response.languages">
+                                <span>&nbsp;{{language}}&nbsp;</span>
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5>
+                            <scan class="glyphicon glyphicon-camera"></scan>
+                            <cite>&nbsp;Directors:&nbsp;</cite>
+                            <span ng-repeat="director in response.directors">
+                                <span>&nbsp;{{director.name}}&nbsp;</span>
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5>
+                            <scan class="glyphicon glyphicon-pencil"></scan>
+                            <cite>&nbsp;Writer:&nbsp;</cite>
+                            <span ng-repeat="writer in response.writers">
+                                <span>&nbsp;{{writer.name}}&nbsp;</span>
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="col-sm-12">
+                        <h5>
+                            <scan class="glyphicon glyphicon-tags"></scan>
+                            <cite>&nbsp;Genres:&nbsp;</cite>
+                            <span ng-repeat="genre in response.genres">
+                                <span>&nbsp;{{genre}}&nbsp;</span>
+                            </span>
+                        </h5>
+                    </div>
+                    <div class="col-lg-6">
+                        <button ng-click="addMovieToWatchlist()" class="btn btn-primary">
+                            <scan class="glyphicon glyphicon-bookmark"></scan>
+                            <scan href="#">&nbsp;Add to Watchlist</scan>
+                        </button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button ng-click="addMovieToOrder()" class="btn btn-success">
+                            <scan class="glyphicon glyphicon-shopping-cart"></scan>
+                            <scan href="#">Add to Order</scan>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="row col-sm-12">
+                <scan class="glyphicon glyphicon-facetime-video"></scan>
+                &nbsp;{{response.plot}}
+            </div>
+        </div>
+
+        <div ng-hide="noComments" class="row well">
+            <hr>
+            <div class="media" ng-repeat="comment in comments">
+                <div class="media-body">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <h4 class="media-heading">
+                                <scan class="glyphicon glyphicon-user"></scan>
+                                <cite>&nbsp;{{comment.username}}:&nbsp;</cite>
+                                <small>{{comment.time}}</small>
+                            </h4>
+                        </div>
+                        <div class="row col-md-7">
+                            <div class="col-md-3">
+                                <button ng-click="addUserAsFriend(comment.userId)" class="btn btn-primary">
+                                    <scan class="glyphicon glyphicon-plus"></scan>
+                                    <scan href="#">&nbsp;Add friends</scan>
+                                </button>
+                            </div>
+                            <div class="col-md-3 col-md-1">
+                                <button ng-click="" class="btn btn-success" data-toggle="modal" data-target="#{{'model-' + $index}}">
+                                    <scan class="glyphicon glyphicon-search"></scan>
+                                    <scan href="#">&nbsp;Check user profile</scan>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <p>{{comment.message}}</p>
+                </div>
+
+                <div class="modal fade" id="{{'model-' + $index}}" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="feedbackModalLabel"><strong>User: </strong>{{comment.username}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><strong>First Name: </strong>{{comment.firstname}}</p>
+                                <p><strong>Last Name: </strong>{{comment.lastname}}</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button ng-click="addUserAsFriend(comment.userId)" class="btn btn-primary" data-dismiss="modal">
+                                    <scan class="glyphicon glyphicon-plus"></scan>
+                                    <scan href="#">&nbsp;Add friends</scan>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Comments Form -->
+        <div class="row well">
+            <h4>Leave a Comment:&nbsp;
+                <small class="alert alert-danger" ng-show="inputEmptyMessage">Comment cannot be empty!</small>
+            </h4>
+            <form role="form">
+                <div class="form-group">
+                    <textarea ng-model="inputMessage" class="form-control" rows="5"></textarea>
+                </div>
+                <button ng-click="createComment(inputMessage)" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </div>

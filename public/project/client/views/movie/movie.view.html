@@ -1,0 +1,145 @@
+    <div class="container">
+        <h1>Search World</h1>
+        <span ng-show="pageIsLoading" us-spinner="{radius:50, width:20, length: 40, top: '60%'}"></span>
+        <div class="input-group">
+            <input ng-model="inputTitle" type="text" class="form-control" placeholder="The Godfather">
+            <span class="input-group-btn">
+                <button ng-click="searchMovieByTitle(inputTitle)" class="btn btn-primary" type="button">
+                    <scan class="glyphicon glyphicon-search"></scan>&nbsp;Search Movie
+                </button>
+            </span>
+            <input ng-model="inputActor" type="text" class="form-control" placeholder="Tom Cruise">
+            <span class="input-group-btn">
+                <button ng-click="searchMovieByActor(inputActor)" class="btn btn-info" type="button">
+                    <scan class="glyphicon glyphicon-user"></scan>&nbsp;Search Actor
+                </button>
+            </span>
+        </div>
+        <hr>
+        <div ng-show="searchByTitleSucceed">
+            <div ng-repeat="movieByTitle in moviesByTitle" class="panel panel-success col-md-10 col-md-offset-1">
+                <div class="panel-body">
+                    <h3><dt>
+                        <a ng-click="goToMoveDetail(movieByTitle.idIMDB)">
+                            <strong>{{movieByTitle.title}}&nbsp;</strong><small>({{movieByTitle.year}})</small>
+                        </a>
+                    </dt></h3>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a ng-click="goToMoveDetail(movieByTitle.idIMDB)">
+                                <img class="img-responsive" ng-src="{{movieByTitle.urlPoster}}" alt="">
+                            </a>
+                        </div>
+                        <div class="col-sm-6"><h5><scan class="glyphicon glyphicon-star"></scan><cite>&nbsp;Rating:&nbsp;</cite>{{movieByTitle.rating}}</h5></div>
+                        <div class="col-sm-6">
+                            <h5>
+                                <scan class="glyphicon glyphicon-globe"></scan>
+                                <cite>&nbsp;Countries:&nbsp;</cite>
+                                <span ng-repeat="country in movieByTitle.countries">
+                                    <span>&nbsp;{{country}}&nbsp;</span>
+                                </span>
+                            </h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5>
+                                <scan class="glyphicon glyphicon-console"></scan>
+                                <cite>&nbsp;Languages:&nbsp;</cite>
+                                <span ng-repeat="language in movieByTitle.languages">
+                                    <span>&nbsp;{{language}}&nbsp;</span>
+                                </span>
+                            </h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5>
+                                <scan class="glyphicon glyphicon-camera"></scan>
+                                <cite>&nbsp;Directors:&nbsp;</cite>
+                                <span ng-repeat="director in movieByTitle.directors">
+                                    <span>&nbsp;{{director.name}}&nbsp;</span>
+                                </span>
+                            </h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                <strong>&nbsp;Plot:&nbsp;</strong>
+                                <span>&nbsp;{{movieByTitle.plot}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="searchByAuthorSucceed">
+            <div ng-repeat="actor in authors" class="panel panel-success col-md-10 col-md-offset-1">
+                <div class="panel-body">
+                    <h3><dt>
+                        <strong>{{actor.name}}&nbsp;</strong><small>({{actor.dateOfBirth}})</small>
+                    </dt></h3>
+                </div>
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img class="img-responsive" ng-src="{{actor.urlPhoto}}" alt="">
+                        </div>
+                        <div class="col-sm-6">
+                            <h5>
+                                <scan class="glyphicon glyphicon-header"></scan>
+                                <cite>&nbsp;Height:&nbsp;</cite>{{actor.height}}
+                            </h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <h5>
+                                <scan class="glyphicon glyphicon-globe"></scan>
+                                <cite>&nbsp;Place of Birth:&nbsp;</cite>{{actor.placeOfBirth}}
+                            </h5>
+                        </div>
+                        <div class="col-sm-6">
+                            <p>
+                                <strong>&nbsp;Bio:&nbsp;</strong>
+                                <span>&nbsp;{{actor.bio}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ng-show="nothingChoosed">
+            <div ng-show="searchReturnNoResults" class="alert alert-danger">
+                <strong>Oops!</strong>
+                We cannot find any matching results, please try again. Or you can review our recommendations.
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="page-header">Recommendations
+                    </h3>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th><scan class="glyphicon glyphicon-picture"></scan></th>
+                        <th>Title</th>
+                        <th>Year</th>
+                        <th>Ranking</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="movie in movies">
+                        <td>
+                            <a ng-click="goToMoveDetail(movie.idIMDB)">
+                                <img class="img-responsive" ng-src="{{movie.urlPoster}}" alt="">
+                            </a>
+                        </td>
+                        <td><a ng-click="goToMoveDetail(movie.idIMDB)">{{movie.title}}</a></td>
+                        <td>{{movie.year}}</td>
+                        <td>{{movie.ranking}}</td>
+                        <td>{{movie.rating}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
