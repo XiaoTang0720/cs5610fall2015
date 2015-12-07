@@ -1,0 +1,113 @@
+<div id="whole">
+        <h1 align="center">Movie Journey</h1>
+        <p class="title">Author: </p><p>Xiao Tang &nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto: tang.x@husky.neu.edu">tang.x@husky.neu.edu</a></p>
+        <p>Organizations: CS5610 Northeastern University</p>
+        <p>Creation Date: December 6, 2015</p>
+        <br/>
+        <p class="title">Project Description: </p>
+        <p>
+            My website's name is Movie Journey. Movie Journey is a website based on the tendency that people feel strained and need a way to relax their minds. However, it's hard to decide which movie is deserved to watch. It is common to see that people abort the movie in middle way. It wastes people's time and often make people feel even worse. Movie Journey provide a platform, giving users a brief introduction  of movie, making comments and rate about these movies, which helps people to find movies to their tastes in fast and convenient way. It also provide a search engine to help people find all movies and biographies of their favorite actors/actresses.
+        </p>
+        <p style="text-align: center; font-size: 120%"><b>System Actors</b></p>
+        <p>User:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	Create an account.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	Modify personal information.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	Search movies , add movies to watch list  and delete movies from watch list.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	Add movie to order, delete movies from order.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	Pay for the movies in his/her order.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	Make comments.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.	Add friends</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.	Check my friend list to see who he/she is following and who he/she is followed.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.	Logout.</p>
+        <br/>
+        <p>Guest:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	Browse the website.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	Search movies to see which movies are more popolar.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	Search actors/actresses to know more information about your favorite actors/actresses</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	Browse the comments below movies to see what people think of this movie.</p>
+        <br/>
+        <p style="text-align: center; font-size: 120%"><b><strong>User Case Analysis</strong></b></p>
+        <p>1. User creates an account</p>
+        <p>Description: the User fills in some details about self-information.</p>
+        <p>Precondition: Parents have a reliable email address.</p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User -- visits  the website and click the signup.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User -- fills in all the required information.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	System -- checks the form and input values.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	System -- if input validations failed, stays at page and notices the user.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	User -- clicks the sign up button.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	System -- stores the information in the database and notices the user successful register.</p>
+        <br>
+        <p>2. User Modify Personal Information</p>
+        <p>Description: the user modify some details about personal information.</p>
+        <p>Precondition: user has an account and login.</p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User -- visits the website and enters the username and password to login.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User -- clicks the profile header to navigate to profile page.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	User -- updates the information.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User -- clicks update.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	System -- updates the information in the database and notices the user the successful updating.</p>
+        <br/>
+        <p>3. User searches movies, adds movie to order to watch list, removes movie from order or watch list and checks out at order page.</p>
+        <p>Description: the user can search movies, adds/removes movies to/from watch list and add/removes movies to/from order.</p>
+        <p>Precondition: User has an account and logins.</p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User -- signs in.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User -- clicks the header Movies to navigate to Movie page.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	User -- inputs any movie title/ actor you want to search and clicks the button Search Movie/Search Actor.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	System -- calls the outside API to search the movie/actor, if find the matched movie/actor, presents the details to user in the Movie Detail page, otherwise reminds the user there is no matched movie/actor.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	User -- in the movie detail page, clicks the button Add to watch list to add the movie to watch list, then jump the watch list page. User can also clicks the button Add to order to add the movie to order.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	System -- updates the watch list and order in the database.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.	User -- in the watchlist page, clicks the button Remove movie to remove the movie from watch list or clicks the button Add to order to add the movie to order, then jump to the order page. </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.	System -- updates the watchlist and order in the database.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.	User -- in the order page, clicks the remove button from the  order or you can check out here.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10.	System -- Remembers the user you have successfully check out and update the order database</p>
+        <br/>
+        <p>4. User makes comments about movie.</p>
+        <p>Description: the User can leave comments about movie if he/she would like to.</p>
+        <p>Precondition: User has an account and logins.</p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User -- signs in.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User -- clicks the movie header to navigate to Movie page, inputs movie title which he/she wants to watch.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	System -- calls the API to search the matched movies and presents the results.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User -- clicks the title or poster of the movie, then page changes to the movie detail.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	User -- User can browse the comments below the movie poster and can also input some contents in the text area, then clicks the button Leave comments.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	System -- posts the new comments below the movie and stores the new comments into database.</p>
+        <br />
+        <p>5. User can add friends.</p>
+        <p>Description: User can add other users to be his/her friends.</p>
+        <p>Precondition: User has an account and logins.</p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User -- signs in.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User -- clicks header movie to navigate the Movie page.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	User -- clicks any title or poster of movie you want to see, then navigate to the Movie detail page.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User -- can see all the comments of this movie and whose comments belongs to. User can click the button Check user profile to see his/her information. User also can click the button Add friends if he/she wants to make friends with him/her.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	System -- navigates to the Friend page and stores the relationship between users into database and informs the user "add friends successfully".</p>
+        <br />
+        <p>6. User check his/her friend list.</p>
+        <p>Description:  User can check his/her friend list to see who he/she is following and who he/she is followed by.</p>
+        <p>Precondition: User has an account and already logined. </p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User-- signs in.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User-- clicks the header My friends, then navigate to the Friend page.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	User-- can browse friends'' information he/she has.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User-- can remove any user he/she doesn't want to follow any more. Clicks the button remove friend to remove the according friend from his/her friend list.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	System -- notifies the user remove action is successful and update the friends database accordingly.</p>
+        <br/>
+        <p>7. User logs out</p>
+        <p>Description: If the user finishes all his operations, he can log out the website.</p>
+        <p>Precondition: User has an account and already logined.</p>
+        <p>Step by Step:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User -- clicks the sign in button.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User -- inputs the username and password and  clicks the sign in button.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	System -- notifies the user login successfully and replace the header Username with the current user name.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User -- can do what he/she likes after logined.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.   User -- clicks the header Logout.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	System -- notifies the user logout successfully, restores the cur username to original header Username, then navigates to the home page.</p>
+        <br/>
+        <p class="title">Architecture Diagram: </p>
+        <img style="text-align: center" src="architecture.jpg"/>
+        <br/>
+        <p class="title">UML: </p>
+        <img style="text-align: center" src="uml.jpg"/>
+        <br/>
