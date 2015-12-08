@@ -6,6 +6,9 @@
 	function LoginController($scope, UserService, $rootScope, $location) {
         $scope.$location = $location;
         $scope.passwordNotCorrect = false;
+        $rootScope.user = null;
+        $rootScope.globalAdminLogin = false;
+        $rootScope.userName = "Sign in";
         $scope.login = function(loginuser) {
             if ($scope.loginuser
                 && $scope.loginuser.username
