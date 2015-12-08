@@ -11,7 +11,8 @@
                 createCommentForMovie: createCommentForMovie,
                 searchCommentsByMovieId: searchCommentsByMovieId,
                 findAllCommentsForAdmin: findAllCommentsForAdmin,
-                deleteCommentById: deleteCommentById
+                deleteCommentById: deleteCommentById,
+                updateCommentByUserId: updateCommentByUserId
             };
             return service;
 
@@ -88,5 +89,16 @@
                     });
                 return deferred.promise;
             }
+
+            function updateCommentByUserId(user) {
+                var deferred = $q.defer();
+                $http
+                    .post("/api/project/userincomment", user)
+                    .success(function(response) {
+                        deferred.resolve(response);
+                    });
+                return deferred.promise;
+            }
+
         }
 })();

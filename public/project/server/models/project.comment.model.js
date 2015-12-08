@@ -7,7 +7,8 @@ module.exports = function(db, mongoose) {
         createComment : createComment,
         findAllCommentsForMovie : findAllCommentsForMovie,
         findAllCommentsForAdmin : findAllCommentsForAdmin,
-        deleteComment : deleteComment
+        deleteComment : deleteComment,
+        updateUserInComment : updateUserInComment
     };
     return api;
 
@@ -61,6 +62,25 @@ module.exports = function(db, mongoose) {
                 deferred.reject(err);
             } else {
                 deferred.resolve(status);
+            }
+        });
+
+        return deferred.promise;
+    }
+
+    function updateUserInComment(user) {
+        var deferred = q.defer();
+
+        CommentModel.update({userId: user.userId},
+        {
+            firstname: user.firstname,
+            lastname: user.lastname,
+            email: user.email
+        }, function(err, response) {
+            if (err) {
+                deferred.reject(err);
+            } else {
+                deferred.resolve(response);
             }
         });
 

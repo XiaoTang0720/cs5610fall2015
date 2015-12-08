@@ -4,6 +4,7 @@ module.exports = function(app, model) {
     app.get("/api/project/comment/:id", find);
     app.get("/api/project/comments", findAll);
     app.delete("/api/project/comment/:id", deleteComment);
+    app.post("/api/project/userincomment", updateUserInComment);
 
     function create(req, res) {
         model
@@ -32,6 +33,14 @@ module.exports = function(app, model) {
     function deleteComment(req, res) {
         model
             .deleteComment(req.params.id)
+            .then(function(comment) {
+                res.json(comment);
+            });
+    }
+
+    function updateUserInComment(req, res) {
+        model
+            .updateUserInComment(req.body)
             .then(function(comment) {
                 res.json(comment);
             });

@@ -3,7 +3,7 @@
         .module("MovieJourney")
         .controller("ProfileController", ProfileController)
 
-	function ProfileController($scope, UserService, $rootScope, $location) {
+	function ProfileController($scope, UserService, MovieService, $rootScope, $location) {
         $scope.$location = $location;
         var curUser = $rootScope.user;
         if (!curUser) {
@@ -15,6 +15,15 @@
                 $rootScope.user = user;
                 $rootScope.userName = user.username;
                 $scope.updateuser = user;
+                var userInComment = {
+                    userId: curUser._id,
+                    firstname: updateuser.firstname,
+                    lastname: updateuser.lastname,
+                    email: updateuser.email
+                };
+                MovieService.updateCommentByUserId(userInComment).then(function(comment){
+                    // do nothing.
+                });
                 alert("Update user profile successfully!");
                 $location.url("/movie");
             })
