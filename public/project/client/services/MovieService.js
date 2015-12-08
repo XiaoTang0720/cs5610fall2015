@@ -9,7 +9,9 @@
                 searchMovieByActor: searchMovieByActor,
                 findInitialRankings: findInitialRankings,
                 createCommentForMovie: createCommentForMovie,
-                searchCommentsByMovieId: searchCommentsByMovieId
+                searchCommentsByMovieId: searchCommentsByMovieId,
+                findAllCommentsForAdmin: findAllCommentsForAdmin,
+                deleteCommentById: deleteCommentById
             };
             return service;
 
@@ -61,6 +63,26 @@
                 var deferred = $q.defer();
                 $http
                     .get("/api/project/comment/" + idIMDB)
+                    .success(function(response) {
+                        deferred.resolve(response);
+                    });
+                return deferred.promise;
+            }
+
+            function findAllCommentsForAdmin() {
+                var deferred = $q.defer();
+                $http
+                    .get("/api/project/comments")
+                    .success(function(response) {
+                        deferred.resolve(response);
+                    });
+                return deferred.promise;
+            }
+
+            function deleteCommentById(id) {
+                var deferred = $q.defer();
+                $http
+                    .delete("/api/project/comment/" + id)
                     .success(function(response) {
                         deferred.resolve(response);
                     });

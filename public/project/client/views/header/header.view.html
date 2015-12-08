@@ -13,9 +13,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
             <li><a href="#/movie">Movies</a></li>
-            <li><a href="img/document.html">Document</a></li>
+            <li><a target="_blank" href="img/document.html">Document</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+            <li ng-show="globalAdminLogin"><a href="#/managecomment">Management for Admin</a></li>
             <li ng-class="{'active' : $location.url().indexOf('username') != -1}"><a href="#/profile">{{userName}}</a></li>
             <li ng-class="{'active' : $location.url().indexOf('friend') != -1}"><a href="#/friend">MyFriends</a></li>
             <li ng-class="{'active' : $location.url().indexOf('watchlist') != -1}"><a href="#/watchlist">Watchlist</a></li>

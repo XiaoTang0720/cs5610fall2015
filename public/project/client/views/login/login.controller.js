@@ -12,7 +12,12 @@
                 && $scope.loginuser.password) {
                 UserService.findUserByCredentials($scope.loginuser.username, $scope.loginuser.password).then(function(user) {
                     if (user != null) {
-                        alert("Welcome to login in!");
+                        if (user.isAdmin) {
+                            alert("Welcome to login in, administrator!");
+                            $rootScope.globalAdminLogin = true;
+                        } else {
+                            alert("Welcome to login in, " + user.username);
+                        }
                         $rootScope.user = user;
                         $rootScope.userName = user.username;
                         $location.url("/movie");

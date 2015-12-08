@@ -55,6 +55,11 @@
         templateUrl: "views/friend/friend.view.html",
         controller: "FriendController"
       })
+      .when("/managecomment",
+      {
+        templateUrl: "views/managecomment/managecomment.view.html",
+        controller: "ManageCommentController"
+      })
       .otherwise({
         redirectTo: "/home"
       })
