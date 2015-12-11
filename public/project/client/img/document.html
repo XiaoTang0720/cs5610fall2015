@@ -4,19 +4,22 @@
         <p>Organizations: CS5610 Northeastern University</p>
         <p>Creation Date: December 6, 2015</p>
         <br/>
+        <p>Project Proposal</p>
+        <p>URL: <a href="https://docs.google.com/document/d/10oeVKVEJpf1Dwcpacc_N5D_FKBxnn2oLIYAx5NQYu28/edit">Project Proposal</a></p>
+        <br/>
         <p>Project Description: </p>
         <p>
-            My website's name is Movie Journey. Movie Journey is a website based on the tendency that people feel strained and need a way to relax their minds. However, it's hard to decide which movie is deserved to watch. It is common to see that people abort the movie in middle way. It wastes people's time and often make people feel even worse. Movie Journey provide a platform, giving users a brief introduction  of movie, making comments and rate about these movies, which helps people to find movies to their tastes in fast and convenient way. It also provide a search engine to help people find all movies and biographies of their favorite actors/actresses.
+            My website's name is Movie Journey. Movie Journey is a website based on the tendency that people feel strained and need a way to relax their minds. However, it's hard to decide which movie is deserved to watch. It is common to see that people abort the movie in middle way. It wastes people's time and often make people feel even worse. Movie Journey provide a platform, giving users a brief introduction  of movie, making comments about these movies, which helps people to find movies to their tastes in fast and convenient way. It also provide a search engine to help people find all movies and biographies of their favorite actors/actresses. People can also make friends with who have same favorite movies here.
         </p>
         <p style="text-align: center; font-size: 120%"><b>System Actors</b></p>
         <p>User:</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	Create an account.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	Modify personal information.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	Search movies , add movies to watch list  and delete movies from watch list.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	Search movies , add movies to watch list  and delete movies from watch list and Search Actors.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	Add movie to order, delete movies from order.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	Pay for the movies in his/her order.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	Make comments.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.	Add friends</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.	Add and remove friends</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.	Check my friend list to see who he/she is following and who he/she is followed.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.	Logout.</p>
         <br/>
@@ -25,14 +28,15 @@
         <p>Admin Username: admin</p>
         <p>Admin Password: admin</p>
         <p>When you enter the userword and password of admin, now you are an admin and can delete comments of users.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	Delete comments of user.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	Search movies , add movies to watch list  and delete movies from watch list.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	Add movie to order, delete movies from order.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	Pay for the movies in his/her order.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	Make comments.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	Add friends</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.	Check my friend list to see who he/she is following and who he/she is followed.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.	Logout.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	Input the username: admin and password: admin, now your role is an admin.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	Delete comments of user.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	Search movies , add movies to watch list  and delete movies from watch list and search actors.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	Add movie to order, delete movies from order.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	Pay for the movies in his/her order.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	Make comments.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.	Add friends and remove friends</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8.	Check my friend list to see who he/she is following and who he/she is followed.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9.	Logout.</p>
         <br/>
         <p style="text-align: center; font-size: 120%"><b><strong>User Case Analysis</strong></b></p>
         <p>1. User creates an account</p>
@@ -92,13 +96,13 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User -- can see all the comments of this movie and whose comments belongs to. User can click the button Check user profile to see his/her information. User also can click the button Add friends if he/she wants to make friends with him/her.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	System -- navigates to the Friend page and stores the relationship between users into database and informs the user "add friends successfully".</p>
         <br />
-        <p>6. User check his/her friend list.</p>
+        <p>6. User checks his/her friend list.</p>
         <p>Description:  User can check his/her friend list to see who he/she is following and who he/she is followed by.</p>
         <p>Precondition: User has an account and already logined. </p>
         <p>Step by Step:</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1.	User-- signs in.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.	User-- clicks the header My friends, then navigate to the Friend page.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	User-- can browse friends'' information he/she has.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.	User-- can browse friends'information he/she has.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.	User-- can remove any user he/she doesn't want to follow any more. Clicks the button remove friend to remove the according friend from his/her friend list.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.	System -- notifies the user remove action is successful and update the friends database accordingly.</p>
         <br/>
@@ -113,9 +117,4 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.   User -- clicks the header Logout.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.	System -- notifies the user logout successfully, restores the cur username to original header Username, then navigates to the home page.</p>
         <br/>
-        <p>Architecture Diagram: </p>
-        <img style="text-align: center" src="architecture.jpg"/>
-        <br/>
-        <p>UML: </p>
-        <img style="text-align: center" src="uml.jpg"/>
-        <br/>
+
